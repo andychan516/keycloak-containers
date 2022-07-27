@@ -1,4 +1,4 @@
-  name: Release Keycloak legacy containers
+  name: Release Keycloak legacy containers by Andy
   on:
     workflow_dispatch:
     push:
@@ -8,7 +8,7 @@
 
   jobs:
     publish:
-      if: github.repository == 'bobdxiao/keycloak-containers'
+      if: github.repository == 'andychan516/keycloak-containers'
       runs-on: ubuntu-latest
       strategy:
         matrix:
@@ -32,7 +32,7 @@
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: bobdxiao/${{ matrix.image }}
+          images: andychan516/${{ matrix.image }}
           tags: |
             type=raw,value={{tag}}-legacy
             type=raw,value=legacy
